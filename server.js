@@ -11,6 +11,7 @@ const authRoutes = require('./routes/auth');
 const diaryRoutes = require('./routes/diary');
 const userRoutes = require('./routes/user');
 const uploadRoutes = require('./routes/upload');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -52,6 +53,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/diary', diaryRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
