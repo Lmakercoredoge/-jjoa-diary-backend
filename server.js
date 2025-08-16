@@ -27,13 +27,7 @@ const limiter = rateLimit({
 
 // Middleware
 app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'"],
-      styleSrc: ["'self'", "'unsafe-inline'"],
-    },
-  },
+  contentSecurityPolicy: false, // CSP 완전 비활성화
 }));
 app.use(compression());
 app.use(morgan('combined'));
